@@ -10,18 +10,21 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-
+    <link rel="icon" href="src/img/ThinkFast.jpeg">
     <link rel="stylesheet" href="src/style/styles.css">
+    <!-- <script type="module" src="src/js/controller.js"></script> -->
+
     <script defer src="src/js/script.js"></script>
-    <title>ThinkFast</title>
+
+    <title>JS-7 Think Fast</title>
 </head>
 
 <body>
     <div class="grid-overlay"></div>
-    <!-- Selecting Quiz level and Category -->
-    <div class="container">
-        <h2 class="container-title">Welcome To, ThinkFast </h2>
-        <p class="container-desp">"ThinkFast: Test your knowledge and pick the perfect quiz options to begin !"</p>
+    <!-- Selecting Quiz level and Category (Screen-1) -->
+    <div class="container  " id="screen1">
+        <h1 class="container-title">Welcome To, Think Fast </h1>
+        <p class="container-desp">"Think Fast: Test your knowledge and pick the perfect quiz options to begin !"</p>
         <hr class="container-seperator">
 
         <form action="" class="container-quizAPI">
@@ -81,9 +84,48 @@
             </select>
         </form>
 
-        <button id="nextBtn" type="submit" class="container-btn">Start Quiz</button>
+        <button id="startQuizBtn" type="submit" class="container-btn start-quiz">Start Quiz</button>
 
     </div>
+    <!-- Screen 2 Questions and their options -->
+    <div id="screen2" class="container container-Question hidden">
+        <h1>Think Fast</h1>
+        <p class="container-desp">Think Fast: Quick questions, fast answers, endless fun!</p>
+        <hr class="container-seperator">
+        <h2 class="question-text">Q1. Which is the largest animal ?</h2>
+        <div class="options">
+            <button class=" container-btn optionBtn option-Correct">
+                Whale
+            </button>
+            <button class=" container-btn optionBtn option-Wrong">
+                Lion
+            </button>
+            <button class=" container-btn optionBtn">
+                Elephant
+            </button>
+            <button class=" container-btn optionBtn">
+                Dolphin
+            </button>
+        </div>
+
+        <div class="quiz-status">
+            <button class="container-btn quit-btn" id="exitBtn">Exit</button>
+            <button class="container-btn score-btn" id="scoreBtn">Score: 1 / 5</button>
+            <button id="nextQuestionBtn" class="container-btn">Next</button>
+        </div>
+
+    </div>
+
+    <!-- Screen 3 Score -->
+    <div id="screen3" class="container hidden">
+        <h1>Think Fast</h1>
+        <p class="container-desp">Think Fast: Quick questions, fast answers, endless fun!</p>
+        <hr class="container-seperator">
+        <h4 class="total-score">Your Total Score : 3 ⭐ </h4>
+        <p class="end-msg">Thank You for Playing !</p>
+        <button class="container-btn animated-btn">Play Again</button>
+    </div>
+
 </body>
 
 </html>
