@@ -1,18 +1,20 @@
-8064
+8066
 97/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/src/imgs/ThinkFast.jpeg1735901579411271256 0
 109/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/src/imgs/android-chrome-512x512.png1735881960000000000 0
 100/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/src/imgs/favicon-32x32.png1735881960000000000 0
+97/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/src/imgs/close-icon.svg1736168204888089064 0
 103/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/src/imgs/apple-touch-icon.png1735881960000000000 0
 96/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/src/imgs/trash_Can.png1731417367065176000 0
-82/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/src/imgs1736156269716765532 1
+82/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/src/imgs1736168229920702153 1
 83/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/src/style1735887486592216638 1
 90/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/src/js/script.js1736164064311424790 0
 90/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/src/js/config.js1736164416052050926 0
 89/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/src/js/model.js1736165346442666290 0
-97/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/dist/index.11ef8305.css1736165977178308784 0
-102/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/dist/ThinkFast.fe8ad728.jpeg1736165977178308784 0
-96/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/dist/index.e37f48ea.js1736166076400776232 0
-78/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/dist1736166076424776828 1
+102/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/dist/close-icon.0210b43f.svg1736169263263356804 0
+97/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/dist/index.11ef8305.css1736169263287357355 0
+102/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/dist/ThinkFast.fe8ad728.jpeg1736169250503063659 0
+96/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/dist/index.e37f48ea.js1736169263279357171 0
+78/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/dist1736169263295357539 1
 110/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/posthtml-render/license1735901338144425634 0
 112/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/posthtml-render/readme.md1735901340112407676 0
 115/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/posthtml-render/changelog.md1735901339064417217 0
@@ -428,7 +430,7 @@
 123/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/modules/web.set-immediate.js1735901379548081372 0
 135/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/modules/esnext.observable.constructor.js1735901362260216677 0
 124/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/modules/es.promise.finally.js1735901360436231648 0
-88/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/src/js/view.js1736165976326287602 0
+88/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/src/js/view.js1736167920197122032 0
 127/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/modules/esnext.iterator.range.js1735901361728221029 0
 118/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/modules/es.array.map.js1735901359884236203 0
 128/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/modules/es.number.to-precision.js1735901360268233034 0
@@ -1666,7 +1668,7 @@
 128/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/features/dom-collections/index.js1735901368852163684 0
 127/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/full/array/virtual/find-index.js1735901363844203783 0
 131/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/features/dom-collections/for-each.js1735901365800188002 0
-101/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/dist/trash_Can.0a1d3789.png1736165977178308784 0
+101/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/dist/trash_Can.0a1d3789.png1736169250507063749 0
 124/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/features/typed-array/every.js1735901362964210932 0
 123/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/features/typed-array/fill.js1735901363360207713 0
 125/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/features/typed-array/to-hex.js1735901377584096150 0
@@ -3535,7 +3537,7 @@
 97/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/@parcel/fs1735901344244370504 1
 126/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/caniuse-lite/data/features/classlist.js1735901347052345646 0
 135/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/@swc/helpers/_/_to_consumable_array/package.json1735901356588263675 0
-86/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/package.json1736146096826889590 0
+86/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/package.json1736169250131055117 0
 118/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/entities/lib/esm/index.d.ts.map1735901345852356230 0
 118/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/update-browserslist-db/index.js1735901338632421169 0
 128/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/features/array/virtual/reverse.js1735901374280121350 0
@@ -3575,7 +3577,7 @@
 101/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/@parcel/events1735901341668393596 1
 97/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/nullthrows1735901338860419082 1
 121/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/actual/instance/pad-end.js1735901373164129958 0
-101/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/dist/index.11ef8305.css.map1736165977210309580 0
+101/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/dist/index.11ef8305.css.map1736169263295357539 0
 129/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/@parcel/markdown-ansi/lib/markdown-ansi.js1735901338412423182 0
 121/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/full/instance/to-sorted.js1735901378040092702 0
 135/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/caniuse-lite/data/features/css3-cursors-newer.js1735901351920303332 0
@@ -4123,7 +4125,7 @@
 113/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/full/math/clamp.js1735901352452298770 0
 124/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/caniuse-lite/data/features/colr-v1.js1735901347244343961 0
 109/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/@swc/core/binding.d.ts1735901340228406624 0
-84/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/index.html1736165468345681173 0
+84/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/index.html1736168935347940953 0
 111/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/domhandler/lib/node.d.ts1735901343048381188 0
 104/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/callsites/license1735901338524422156 0
 147/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/caniuse-lite/data/features/mdn-css-unicode-bidi-plaintext.js1735901358004251815 0
@@ -4527,7 +4529,7 @@
 121/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/sass/types/legacy/plugin_this.d.ts1735901353164292676 0
 121/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/@parcel/packager-html/package.json1735901339852410040 0
 133/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/@parcel/core/lib/registerCoreWithSerializer.js1735901349212326752 0
-100/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/dist/index.e37f48ea.js.map1736166076424776828 0
+100/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/dist/index.e37f48ea.js.map1736169263295357539 0
 120/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/caniuse-lite/data/features/wav.js1735901361076226377 0
 133/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/@swc/helpers/cjs/_async_generator_delegate.cjs1735901340688402453 0
 113/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/full/dom-exception1735901378200091498 1
@@ -5270,7 +5272,7 @@
 127/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/caniuse-lite/data/features/array-find.js1735901344792365627 0
 139/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/caniuse-lite/data/features/keyboardevent-location.js1735901357052259777 0
 124/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/@swc/helpers/_/_sliced_to_array_loose1735901356008268549 1
-89/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/dist/index.html1736165977178308784 0
+89/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/dist/index.html1736169263263356804 0
 112/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/semver/functions/rsort.js1735901344324369792 0
 117/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/@parcel/workers/lib/backend.js1735901338436422962 0
 128/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/actual/array/virtual/to-sorted.js1735901377988093094 0
@@ -5780,7 +5782,7 @@
 121/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/es/array/virtual/filter.js1735901363564206057 0
 128/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/caniuse-lite/data/features/css-filters.js1735901348948329048 0
 105/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/commander/index.js1735901341524394896 0
-94/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/src/style/styles.css1736162683032607339 0
+94/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/src/style/styles.css1736168396560730442 0
 97/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/domhandler1735901342104389665 1
 130/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/@parcel/workers/src/threads/ThreadsChild.js1735901344760365912 0
 110/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/domhandler/lib/index.js1735901339388414267 0
@@ -7947,7 +7949,7 @@
 118/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/features/parse-float.js1735901373424127950 0
 141/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/features/async-disposable-stack/constructor.js1735901354496281338 0
 135/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/features/async-disposable-stack/index.js1735901368820163937 0
-94/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/src/js/controller.js1736166100665379801 0
+94/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/src/js/controller.js1736168065780683394 0
 123/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/@parcel/diagnostic/src/diagnostic.js1735901339316414922 0
 127/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/caniuse-lite/data/features/selectlist.js1735901360352232341 0
 110/home/softrefine/github-classroom/Softrefine-Internship/js-7-anshbegmirza/node_modules/core-js/features/regexp1735901378284090865 1
