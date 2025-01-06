@@ -1,33 +1,61 @@
 import { async } from 'regenerator-runtime';
 import 'core-js/es/object/create';
 import * as helper from "./helper.js";
+import * as config from "./config.js"
 
 
-// all the data abt the quiz app
-
+// to store the quiz state as a state object in model
 export const state = {
-  questions: [],
   currentQuestionIndex: 0,
+  questions: [],
   score: 0,
-  totalQuestions: 0
+  TIMEOUT_SEC: config.TIMEOUT_SEC,
 };
 
 
-// Function to fetch and handle JSON data
-export const getJSON = async function (url) {
+// to save the quiz state to the local storage
+export const saveState = function () {
+  const quizState = {
+    currentQuestionIndex: state.currentQuestionIndex,
+    questions: state.questions,
+    score: state.score,
+  };
+  localStorage.setItem('quizState', JSON.stringify(quizState));
+};
+
+
+// function to restore data from the saved local storage
+export const restoreState = function () {
+  const savedState = JSON.parse(localStorage.getItem('quizState'));
+  // if saved state exists
+  if (savedState) {
+    state.currentQuestionIndex = savedState.currentQuestionIndex;
+    state.questions = savedState.questions;
+    state.score = savedState.score;
+    return true;
+  }
+  // else move ahead
+  return false;
+};
+
+//function to clear state
+export const clearState = () => {
+  localStorage.removeItem('quizState');
+}
+
+// to fetch questions data from the api
+export const fetchQuestions = async function (url) {
   try {
     const fetchPro = fetch(url);
-    const res = await Promise.race([fetchPro, timeout(config.TIMEOUT_SEC)]);
+    const res = await Promise.race([fetchPro, helper.timeout(state.TIMEOUT_SEC)]);
     const data = await res.json();
-
-    if (!res.ok) {
-      throw new Error(`${data.message} (${res.status})`);
-    }
-
-    console.log(data); // Log the fetched data
-    return data;
+    if (!res.ok) throw new Error(`${data.message} (${res.status})`);
+    state.questions = data.results;
+    return state.questions;
   } catch (err) {
-    console.error(err);
-    alert(`Error fetching data: ${err.message}`);
+    throw new Error(`Error fetching data: ${err.message}`);
   }
 };
+
+
+

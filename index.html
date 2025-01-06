@@ -10,11 +10,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="icon" href="src/img/ThinkFast.jpeg">
+    <link rel="icon" href="src/imgs/ThinkFast.jpeg">
     <link rel="stylesheet" href="src/style/styles.css">
-    <!-- <script type="module" src="src/js/controller.js"></script> -->
+    <script type="module" src="src/js/controller.js"></script>
 
-    <script type="module" src="src/js/script.js"></script>
+    <!-- <script type="module" src="src/js/script.js"></script> -->
 
     <title>JS-7 Think Fast</title>
 </head>
@@ -25,6 +25,7 @@
     <div class="container  " id="screen1">
         <h1 class="container-title">Welcome To, Think Fast </h1>
         <p class="container-desp">"Think Fast: Test your knowledge and pick the perfect quiz options to begin !"</p>
+
         <hr class="container-seperator">
 
         <form action="" class="container-quizAPI">
@@ -83,10 +84,12 @@
                 <option value="boolean">True / False</option>
             </select>
         </form>
+        <!-- <hr class="container-seperator"> -->
 
         <button id="startQuizBtn" type="submit" class="container-btn start-quiz">Start Quiz</button>
 
     </div>
+
     <!-- Screen 2 Questions and their options -->
     <div id="screen2" class="container container-Question hidden">
         <h1>Think Fast</h1>
@@ -107,6 +110,7 @@
                 Dolphin
             </button>
         </div>
+        <hr class="container-seperator">
 
         <div class="quiz-status">
             <button class="container-btn quit-btn" id="exitBtn">Exit</button>
@@ -117,15 +121,31 @@
     </div>
 
     <!-- Screen 3 Score -->
-    <div id="screen3" class="container hidden">
+    <div id="screen3" class="container hidden ">
         <h1>Think Fast</h1>
         <p class="container-desp">Think Fast: Quick questions, fast answers, endless fun!</p>
         <hr class="container-seperator">
         <h4 class="total-score">Your Total Score : 3 ⭐ </h4>
         <p class="end-msg">Thank You for Playing !</p>
-        <button class="container-btn animated-btn">Play Again</button>
+        <hr class="container-seperator">
+
+        <button class="container-btn animated-btn" id="playAgain-btn">Play Again</button>
     </div>
 
+    <!-- Delete model -->
+    <div class="delete-model hidden">
+        <p class="delete-request">Do you really want to quit ? </p>
+        <img src="src/imgs/trash_Can.png" class="delete-img" alt="">
+        <button class="close-popup-btn">
+            <!-- <ion-icon name="close-circle-outline"></ion-icon> -->
+            <img src="src/imgs/close-icon.svg" alt="">
+        </button>
+        <div class="buttons-box"><button class="yes-delete">Yes, Quit</button>
+            <button class="cancel-btn">Keep Playing</button>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

@@ -19,7 +19,7 @@ body {
   font-family: 'Mona sans', Times New Roman;
   background: linear-gradient(90deg, rgba(33, 35, 62, 1) 0%, rgba(39, 43, 80, 1) 100%);
   color: #fff;
-
+  position: relative;
   height: 100svh;
   display: flex;
   justify-content: center;
@@ -98,9 +98,15 @@ body {
   width: 100%;
   height: 2.5rem;
   border: 1px solid rgb(0, 0, 0, 0.9);
-  padding: 0 1rem;
+  padding: .25rem 1rem;
   border-radius: .5rem;
 }
+
+/* .question-text {
+  max-width: 80%;
+  text-align: center;
+  outline: 1px solid lime;
+} */
 
 .container-desp {
   font-weight: 500;
@@ -158,12 +164,12 @@ body {
 }
 
 .option-Wrong {
-  background-color: #c41523;
+  background-color: #f54646;
   /* border: 2px solid #af0d50; */
 }
 
 .optionBtn:disabled {
-  opacity: 1;
+  opacity: 1 !important;
   cursor: not-allowed;
 }
 
@@ -172,7 +178,7 @@ body {
 } */
 
 .quit-btn {
-  background-color: #f12838;
+  background-color: #f54646;
 }
 
 .quiz-status {
@@ -183,7 +189,8 @@ body {
 
 .score-btn {
   cursor: default;
-  width: 9rem;
+  padding: .5rem 1rem;
+  width: 11rem;
   border: 1px solid black;
 }
 
@@ -207,6 +214,113 @@ body {
   animation: pulse 1.5s infinite;
 }
 
+/* Delete model goes here */
+.overlay {
+  height: 1000rem;
+  width: 1000rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2rem);
+  position: fixed;
+  z-index: 1000;
+}
+
+.delete-model {
+  background-color: white;
+  position: fixed;
+  z-index: 1200;
+  width: 40rem;
+  max-width: 35rem;
+  padding: 2rem 2.5rem;
+  border-radius: 2rem;
+  /* outline: 1px solid red; */
+}
+
+.delete-request {
+  color: black;
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 2rem 0;
+  text-wrap: pretty;
+}
+
+.delete-img {
+  height: 15rem;
+  width: auto;
+  object-fit: cover;
+  display: block;
+  margin: 2rem auto;
+}
+
+.buttons-box {
+  /* outline: 1px solid lime; */
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  /* justify-content: space-between; */
+}
+
+.close-popup-btn {
+  border: none;
+  padding: .3rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background-color: white;
+  cursor: pointer;
+  color: #111111;
+  transition: color 0.3s;
+}
+
+.close-popup-btn:hover {
+  color: #333333;
+}
+
+.close-popup-btn img {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.buttons-box button {
+  /* outline: 1px solid lime; */
+  border: none;
+  padding: 1rem 2rem;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  flex: 1;
+  transition: all .3s;
+  border-radius: .5rem;
+  /* margin-top: 3rem; */
+}
+
+.yes-delete {
+  background-color: #D94860;
+}
+
+.yes-delete:hover {
+  background-color: #e92222;
+}
+
+.cancel-btn {
+  background-color: #5085E9;
+}
+
+.cancel-btn:hover {
+  background-color: #1e65e9;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Animation goes here */
 @keyframes pulse {
 
   0% {
@@ -249,3 +363,82 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+
+/* Responsive Design Goes here */
+/* after 1728  */
+@media (min-width: 108em) {
+  html {
+    font-size: 100%;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .container-desp {
+    font-size: 1.6rem;
+  }
+
+  .container-quizAPI--label {
+    font-size: 1.4rem;
+  }
+
+  .container-quizAPI--input {
+    font-size: 1.4rem;
+    padding: .5rem 1.5rem;
+  }
+
+  .container-btn {
+    font-size: 1.6rem;
+  }
+
+  .optionBtn {
+    font-size: 1.8rem;
+  }
+
+  .total-score {
+    font-size: 1.8rem;
+  }
+
+  .end-msg {
+    font-size: 1.6rem;
+  }
+
+  .animated-btn {
+    padding: .5rem 1rem;
+    width: 12rem;
+  }
+}
+
+/* before 1728px  */
+@media (max-width: 108em) {
+  html {
+    font-size: 100%;
+  }
+}
+
+/* 1440px */
+/* @media (max-width: 90em) {
+  html {
+    font-size: 65%;
+  }
+} */
+
+/* 885px
+@media (max-width:54em) {
+  html {
+    font-size: 66%;
+  }
+} */
+
+/* 554px
+@media (max-width:36em) {
+  .container {
+    width: 90%;
+  }
+
+  .container-title {
+    font-size: 1.4rem;
+  }
+} */

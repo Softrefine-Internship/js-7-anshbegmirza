@@ -7,6 +7,11 @@
 export const TIMEOUT_SEC = 10;
 
 // Function to build the API URL dynamically
-export const BUILD_API_URL = () => {
-  return `https://opentdb.com/api.php?amount=${questionNumber.value}&category=${questionCategory.value}&difficulty=${questionDifficulty.value}&type=${questionType.value}`;
+export const buildApiUrl = () => {
+  const amount = questionNumber.value || 10; // minimum 10 questions
+  const category = questionCategory.value || 9; // any category
+  const difficulty = questionDifficulty.value || 'medium'; // default level
+  const type = questionType.value || 'multiple'; // default type
+
+  return `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${type}`;
 };

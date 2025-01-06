@@ -9,9 +9,6 @@ export const timeout = function (s) {
 };
 
 
-
-
-
 // function to shuffle array
 export const shuffleArray = function (array) {
   // looping in reverse order

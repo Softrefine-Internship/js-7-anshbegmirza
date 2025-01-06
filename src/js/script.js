@@ -1,3 +1,6 @@
+// Initial js file where started building the app, then refactored the code into mvc architecture.
+
+
 'use strict';
 
 // const { all } = require("core-js/fn/promise");
@@ -23,7 +26,11 @@ const optionsContainer = document.querySelector('.options');
 const exitBtn = document.getElementById('exitBtn');
 const scoreBtn = document.getElementById('scoreBtn');
 const nextQuestionBtn = document.getElementById('nextQuestionBtn');
+const playAgainBtn = document.getElementById('playAgain-btn');
 
+const totalScoreEl = document.querySelector('.total-score');
+
+console.log(playAgainBtn)
 
 let currentQuestionIndex = 0;
 let questions = [];
@@ -32,6 +39,34 @@ let score = 0;
 const TIMEOUT_SEC = 10;
 
 
+// saving quiz data to local storage
+const saveState = function () {
+  const quizState = {
+    currentQuestionIndex,
+    questions,
+    score,
+  };
+  localStorage.setItem('quizState', JSON.stringify(quizState));
+}
+
+//resotring session from locale storage.
+const restoreState = function () {
+  const savedState = JSON.parse(localStorage.getItem('quizState'));
+  if (savedState) {
+    currentQuestionIndex = savedState.currentQuestionIndex;
+    questions = savedState.questions;
+    score = savedState.score;
+    return true;
+  }
+  return false;
+}
+
+//clearing locale storage
+const clearState = function () {
+  localStorage.removeItem('quizState');
+}
+
+//timeout function
 const timeout = function (s) {
   return new Promise(function (_, reject) {
     setTimeout(() => {
@@ -43,8 +78,8 @@ const timeout = function (s) {
 // Function to build the API URL dynamically
 const buildApiUrl = () => {
   const amount = questionNumber.value || 10; // minimum 10 questions
-  const category = questionCategory.value || ``; // any category
-  const difficulty = questionDifficulty.value || 'easy'; // default level
+  const category = questionCategory.value || 9; // any category
+  const difficulty = questionDifficulty.value || 'medium'; // default level
   const type = questionType.value || 'multiple'; // default type
 
   return `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${type}`;
@@ -78,10 +113,12 @@ const toggleHidden = function (curScreen, nxtScreen) {
 
 // Event listener for the Next button
 startQuizBtn.addEventListener('click', async function () {
-  const apiUrl = buildApiUrl();
-  await getJSON(apiUrl);
+  if (!restoreState()) {
+    const apiUrl = buildApiUrl();
+    await getJSON(apiUrl);
+  }
   toggleHidden(screen1, screen2);
-  displayQuestions(currentQuestionIndex)
+  displayQuestions(currentQuestionIndex);
 });
 
 console.log(scoreBtn)
@@ -90,8 +127,12 @@ console.log(scoreBtn)
 const displayQuestions = function (index) {
   if (index >= questions.length) {
     toggleHidden(screen2, screen3);
-    return
+    // Your Total Score: 3 ⭐
+    totalScoreEl.textContent = `Your Score : ${score} ⭐`;
+    clearState();
+    return;
   };
+  saveState();
   scoreBtn.textContent = `Score : ${score} / ${questions.length}`;
 
   const question = questions[index];
@@ -127,7 +168,7 @@ const checkAnswer = function (optionBtn, selectedAnswer, correctAnswer) {
   const allButtons = document.querySelectorAll('.optionBtn');
   // console.log(allButtons.classList);
   allButtons.forEach(btn => btn.disabled = true);
-
+  // allButtons.forEach(btn => btn.classList.add('option-Disabled'));
   if (selectedAnswer === correctAnswer) {
     optionBtn.classList.add('option-Correct');
     score++;
@@ -141,7 +182,8 @@ const checkAnswer = function (optionBtn, selectedAnswer, correctAnswer) {
   // HighLight correct answer;
   allButtons.forEach(btn => {
     if (btn.textContent === correctAnswer) {
-      btn.classList.add('option-Correct')
+      btn.classList.add('option-Correct', 'option-Disabled')
+
     }
   })
   nextQuestionBtn.disabled = false;
@@ -154,10 +196,25 @@ nextQuestionBtn.addEventListener('click', function () {
   displayQuestions(currentQuestionIndex);
 });
 
+//reset quiz
+const resetQuiz = function () {
+  // location.reload(); // 
+  currentQuestionIndex = 0;
+  score = 0;
+  questions = [];
+  clearState()
+  toggleHidden(screen2, screen1);
+};
+
+
+
 // Event listener for the Exit button
-exitBtn.addEventListener('click', function () {
-  location.reload(); // Reload the page to reset the quiz
-});
+exitBtn.addEventListener('click', resetQuiz);
+playAgainBtn.addEventListener('click', function () {
+  resetQuiz();
+  toggleHidden(screen3, screen1);
+  location.reload();
+})
 
 
 // helper functions
