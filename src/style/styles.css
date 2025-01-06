@@ -147,6 +147,11 @@ body {
   width: auto;
 }
 
+/* 
+.optionBtn:hover {
+  background-color: #eeeeee;
+} */
+
 .option-Correct {
   background-color: #2CAE5F;
   /* border: 2px solid rgb(13, 175, 13); */
@@ -157,6 +162,14 @@ body {
   /* border: 2px solid #af0d50; */
 }
 
+.optionBtn:disabled {
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+/* .option-Disabled {
+  cursor: not-allowed;
+} */
 
 .quit-btn {
   background-color: #f12838;

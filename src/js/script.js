@@ -1,5 +1,7 @@
 'use strict';
 
+// const { all } = require("core-js/fn/promise");
+
 const screen2 = document.getElementById('screen2');
 const screen3 = document.getElementById('screen3');
 const screen1 = document.getElementById('screen1');
@@ -23,12 +25,12 @@ const scoreBtn = document.getElementById('scoreBtn');
 const nextQuestionBtn = document.getElementById('nextQuestionBtn');
 
 
-let currentQuestionIndex = 2;
+let currentQuestionIndex = 0;
 let questions = [];
 let score = 0;
 
-
 const TIMEOUT_SEC = 10;
+
 
 const timeout = function (s) {
   return new Promise(function (_, reject) {
@@ -40,7 +42,12 @@ const timeout = function (s) {
 
 // Function to build the API URL dynamically
 const buildApiUrl = () => {
-  return `https://opentdb.com/api.php?amount=${questionNumber.value}&category=${questionCategory.value}&difficulty=${questionDifficulty.value}&type=${questionType.value}`;
+  const amount = questionNumber.value || 10; // minimum 10 questions
+  const category = questionCategory.value || ``; // any category
+  const difficulty = questionDifficulty.value || 'easy'; // default level
+  const type = questionType.value || 'multiple'; // default type
+
+  return `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${type}`;
 };
 
 // Function to fetch and handle JSON data
@@ -61,9 +68,11 @@ const getJSON = async function (url) {
   }
 };
 
-const toggleHidden = function (scr1, scr2) {
-  scr1.classList.toggle('hidden');
-  scr2.classList.toggle('hidden');
+
+//toggle visibility between screens.
+const toggleHidden = function (curScreen, nxtScreen) {
+  curScreen.classList.toggle('hidden');
+  nxtScreen.classList.toggle('hidden');
 }
 
 
@@ -72,20 +81,22 @@ startQuizBtn.addEventListener('click', async function () {
   const apiUrl = buildApiUrl();
   await getJSON(apiUrl);
   toggleHidden(screen1, screen2);
-  displayQuestions(2)
+  displayQuestions(currentQuestionIndex)
 });
 
-
+console.log(scoreBtn)
 
 // getting questions from the result 
 const displayQuestions = function (index) {
   if (index >= questions.length) {
-    // alert('You have completed the quiz 💥')
+    toggleHidden(screen2, screen3);
     return
   };
+  scoreBtn.textContent = `Score : ${score} / ${questions.length}`;
 
   const question = questions[index];
-  questionText.textContent = question.question;
+  // Q1. Which is the largest animal ? this formate
+  questionText.innerHTML = `Q${currentQuestionIndex + 1}. ${question.question}`;
 
   const options = [...question.incorrect_answers, question.correct_answer]
   // console.log(options);
@@ -100,18 +111,53 @@ const displayQuestions = function (index) {
   optionsContainer.innerHTML = ""; // clear all the contents
   shuffledOptions.forEach(option => {
     const optionBtn = document.createElement('button');
-    optionBtn.textContent = option;
+    optionBtn.innerHTML = option;
     optionBtn.classList.add('container-btn', 'optionBtn')
+    optionBtn.addEventListener('click', () => checkAnswer(optionBtn, option, question.correct_answer));
+
     optionsContainer.appendChild(optionBtn);
   });
 
 };
 
+// function to check correct Answer
+const checkAnswer = function (optionBtn, selectedAnswer, correctAnswer) {
+  // console.log(selectedAnswer, correctAnswer);
 
+  const allButtons = document.querySelectorAll('.optionBtn');
+  // console.log(allButtons.classList);
+  allButtons.forEach(btn => btn.disabled = true);
 
+  if (selectedAnswer === correctAnswer) {
+    optionBtn.classList.add('option-Correct');
+    score++;
+    // console.log(selectedAnswer.classList)
+  }
+  else {
+    optionBtn.classList.add('option-Wrong');
+    // score--;
+  }
 
+  // HighLight correct answer;
+  allButtons.forEach(btn => {
+    if (btn.textContent === correctAnswer) {
+      btn.classList.add('option-Correct')
+    }
+  })
+  nextQuestionBtn.disabled = false;
+}
 
+// Event listener for the Next Question button
+nextQuestionBtn.addEventListener('click', function () {
+  currentQuestionIndex++;
+  nextQuestionBtn.disabled = true;
+  displayQuestions(currentQuestionIndex);
+});
 
+// Event listener for the Exit button
+exitBtn.addEventListener('click', function () {
+  location.reload(); // Reload the page to reset the quiz
+});
 
 
 // helper functions
@@ -129,3 +175,14 @@ const shuffleArray = function (array) {
   }
   return array;
 };
+
+
+// to decode the api response of complex entites we can use this function
+// although not required for this project.
+const decodeHtmlEntites = function (response) {
+  const he = require('he');
+  return he.decode(response);
+}
+
+// let example = `In the &quot;Call Of Duty: Zombies&quot; map &quot;Origins&quot;, how many numbered power generators are there?`;
+// console.log(decodeHtmlEntites(example));
