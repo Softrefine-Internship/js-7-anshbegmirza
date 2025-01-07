@@ -1,3 +1,5 @@
+// VIEW JS
+
 
 //selecting dom elements
 export const screen2 = document.getElementById('screen2');

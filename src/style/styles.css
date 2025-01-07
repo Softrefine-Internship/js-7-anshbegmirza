@@ -1,5 +1,26 @@
 /* write css here */
+:root {
+  /* --primary-color-container: #3ea6ff; */
+  --primary-color-container: #353A3F;
+  /* --secondary-color-container: #64b2ff; */
+  --secondary-color-container: #44494C;
+  --border: #ffc10779;
 
+
+  --white: #fff;
+  --black: #0c0c0c;
+  --correct-option: #2CAE5F;
+  --wrong-option: #f54646;
+
+  --wrong-option-hover: #e92222;
+
+  --shadow-black: #111;
+  --shadow-hover: #333;
+
+
+  --cancel-btn: #5085E9;
+  --cancel-btn-hover: #1e65e9;
+}
 
 *,
 *::after,
@@ -29,15 +50,16 @@ body {
 
 /* Backdrop Grid */
 /* Grid styles */
+/* 
 .grid-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-size: 200vh; */
+  
   pointer-events: none;
-  /* Ensures it doesn't block interaction */
+  
   z-index: -200;
   background-image:
     radial-gradient(rgb(255, 255, 255) 1px, transparent 4px),
@@ -47,8 +69,37 @@ body {
   background-position: 0 0, 20px 20px, 20px 20px;
 
   animation: grid-movement 5s infinite alternate ease-in-out both;
+} */
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -999;
+  height: 100vh;
+  width: 100vw;
 }
 
+.background-Img {
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1000;
+  height: 100vh;
+  width: 100vw;
+}
+
+.light-grey-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -998;
+
+  height: 100vh;
+  width: 100vw;
+  /* filter: blur(1rem); */
+  background: linear-gradient(90deg, #2e2e2e4b 0%, #252525c5 100%);
+}
 
 .container {
   /* margin: 2rem 3rem; */
@@ -56,10 +107,10 @@ body {
   background: linear-gradient();
   text-align: center;
   width: 80%;
-  /* background-color: #353A65; */
-  background: linear-gradient(180deg, #3ea6ff 0%, #64b2ff 100%);
+
+  background: linear-gradient(180deg, var(--primary-color-container) 0%, var(--secondary-color-container) 100%);
   border-radius: 2rem;
-  border: 3px solid #b3d8fd;
+  border: 3px solid var(--border);
   box-shadow: 1.5rem 1.5rem 2rem rgb(0, 0, 0, .3);
 }
 
@@ -76,7 +127,7 @@ body {
 .container-seperator {
   border: none;
   height: .2rem;
-  background-color: #fff;
+  background-color: var(--white);
   margin: 1rem 2rem;
   border-radius: 1rem;
 }
@@ -131,7 +182,7 @@ body {
 }
 
 .container-btn:hover {
-  border: 2px solid black;
+  border: 2px solid var(--black);
 }
 
 
@@ -159,12 +210,12 @@ body {
 } */
 
 .option-Correct {
-  background-color: #2CAE5F;
+  background-color: var(--correct-option);
   /* border: 2px solid rgb(13, 175, 13); */
 }
 
 .option-Wrong {
-  background-color: #f54646;
+  background-color: var(--wrong-option);
   /* border: 2px solid #af0d50; */
 }
 
@@ -178,13 +229,14 @@ body {
 } */
 
 .quit-btn {
-  background-color: #f54646;
+  background-color: var(--wrong-option);
 }
 
 .quiz-status {
   display: flex;
   justify-content: space-between;
   padding: 0 2rem;
+  /* outline: 1px solid lime; */
 }
 
 .score-btn {
@@ -225,7 +277,7 @@ body {
 }
 
 .delete-model {
-  background-color: white;
+  background-color: var(--white);
   position: fixed;
   z-index: 1200;
   width: 40rem;
@@ -266,14 +318,14 @@ body {
   top: 1rem;
   right: 1rem;
   font-size: 2rem;
-  background-color: white;
+  background-color: var(--white);
   cursor: pointer;
-  color: #111111;
+  color: var(--shadow-black);
   transition: color 0.3s;
 }
 
 .close-popup-btn:hover {
-  color: #333333;
+  color: var(--shadow-hover);
 }
 
 .close-popup-btn img {
@@ -285,7 +337,7 @@ body {
   /* outline: 1px solid lime; */
   border: none;
   padding: 1rem 2rem;
-  color: white;
+  color: var(--white);
   font-size: 1.4rem;
   cursor: pointer;
   flex: 1;
@@ -295,19 +347,19 @@ body {
 }
 
 .yes-delete {
-  background-color: #D94860;
+  background-color: var(--wrong-option);
 }
 
 .yes-delete:hover {
-  background-color: #e92222;
+  background-color: var(--wrong-option-hover);
 }
 
 .cancel-btn {
-  background-color: #5085E9;
+  background-color: var(--cancel-btn);
 }
 
 .cancel-btn:hover {
-  background-color: #1e65e9;
+  background-color: var(--cancel-btn-hover);
 }
 
 
@@ -411,29 +463,22 @@ input::-webkit-inner-spin-button {
   }
 }
 
-/* before 1728px  */
-@media (max-width: 108em) {
-  html {
-    font-size: 100%;
-  }
-}
-
-/* 1440px */
-/* @media (max-width: 90em) {
-  html {
-    font-size: 65%;
-  }
-} */
-
-/* 885px
-@media (max-width:54em) {
-  html {
-    font-size: 66%;
-  }
-} */
-
-/* 554px
+/* 554px */
 @media (max-width:36em) {
+  html {
+    font-size: 59%;
+  }
+
+  .quiz-status {
+    padding: 0 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .score-btn {
+    max-width: 10rem;
+    padding: 0;
+  }
+
   .container {
     width: 90%;
   }
@@ -441,4 +486,43 @@ input::-webkit-inner-spin-button {
   .container-title {
     font-size: 1.4rem;
   }
-} */
+}
+
+/* 780px */
+@media (max-width: 48em) {
+  html {
+    font-size: 62%;
+  }
+
+  .options {
+    /* outline: 1px solid lime; */
+    grid-template-columns: auto;
+  }
+}
+
+
+/* 885px */
+@media (max-width:54em) {
+  html {
+    font-size: 66%;
+  }
+
+  .quiz-status {
+    padding: 0 0.5rem;
+    flex-wrap: wrap;
+  }
+}
+
+/* 1440px */
+@media (max-width: 90em) {
+  html {
+    font-size: 65%;
+  }
+}
+
+/* before 1728px  */
+@media (max-width: 108em) {
+  html {
+    font-size: 100%;
+  }
+}

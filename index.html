@@ -20,9 +20,13 @@
 </head>
 
 <body>
-    <div class="grid-overlay"></div>
+    <div class="grid-overlay">
+        <div class="light-grey-overlay"></div>
+        <img src="src/imgs/blue-bg.jpg" class="background-Img" alt="">
+    </div>
+
     <!-- Selecting Quiz level and Category (Screen-1) -->
-    <div class="container  " id="screen1">
+    <div class="container" id="screen1">
         <h1 class="container-title">Welcome To, Think Fast </h1>
         <p class="container-desp">"Think Fast: Test your knowledge and pick the perfect quiz options to begin !"</p>
 
@@ -31,7 +35,7 @@
         <form action="" class="container-quizAPI">
 
             <label for="question-Number" class="container-quizAPI--label">Select Number of Questions :</label>
-            <input id="questionNumber" type="number" class="container-quizAPI--input" name="question-Number" min="1"
+            <input id="questionNumber" type="number" class="container-quizAPI--input" name="question-Number" min="5"
                 max="30" value="5">
 
             <br>
@@ -133,17 +137,16 @@
     </div>
 
     <!-- Delete model -->
-    <div class="delete-model hidden">
+    <!-- <div class="delete-model hidden">
         <p class="delete-request">Do you really want to quit ? </p>
         <img src="src/imgs/trash_Can.png" class="delete-img" alt="">
         <button class="close-popup-btn">
-            <!-- <ion-icon name="close-circle-outline"></ion-icon> -->
             <img src="src/imgs/close-icon.svg" alt="">
         </button>
         <div class="buttons-box"><button class="yes-delete">Yes, Quit</button>
             <button class="cancel-btn">Keep Playing</button>
         </div>
-    </div>
+    </div> -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

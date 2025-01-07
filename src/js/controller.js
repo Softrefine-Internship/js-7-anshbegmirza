@@ -8,6 +8,13 @@ import * as config from "./config.js"
 
 
 const controlStartQuiz = async () => {
+  // Validate any required input or state
+
+  // if (!view.questionCategory.value) {
+  //   alert('Please select a category to start the quiz!');
+  //   return;
+  // }
+
   if (!model.restoreState()) {
     const apiUrl = config.buildApiUrl();
     try {
@@ -17,7 +24,7 @@ const controlStartQuiz = async () => {
       return;
     }
   }
-  // console.log(view.toggleHidden)
+
   view.toggleHidden(view.screen1, view.screen2);
   controlDisplayQuestion();
 };
@@ -67,13 +74,11 @@ const controlNextQuestion = () => {
 const controlResetQuiz = () => {
   // show model window
 
-
-
-  // model.state.currentQuestionIndex = 0;
-  // model.state.score = 0;
-  // model.state.questions = [];
-  // model.clearState();
-  // view.toggleHidden(view.screen2, view.screen1);
+  model.state.currentQuestionIndex = 0;
+  model.state.score = 0;
+  model.state.questions = [];
+  model.clearState();
+  view.toggleHidden(view.screen2, view.screen1);
 };
 
 const controlPlayAgain = () => {
@@ -92,7 +97,7 @@ const exitBtn = document.getElementById('exitBtn');
 const nextQuestionBtn = document.getElementById('nextQuestionBtn');
 const playAgainBtn = document.getElementById('playAgain-btn');
 
-console.log(startQuizBtn, exitBtn, nextQuestionBtn, playAgainBtn);
+// console.log(startQuizBtn, exitBtn, nextQuestionBtn, playAgainBtn);
 // Event Listeners
 startQuizBtn.addEventListener('click', controlStartQuiz);
 nextQuestionBtn.addEventListener('click', controlNextQuestion);

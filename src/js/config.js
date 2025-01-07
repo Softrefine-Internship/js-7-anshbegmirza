@@ -9,9 +9,29 @@ export const TIMEOUT_SEC = 10;
 // Function to build the API URL dynamically
 export const buildApiUrl = () => {
   const amount = questionNumber.value || 10; // minimum 10 questions
-  const category = questionCategory.value || 9; // any category
-  const difficulty = questionDifficulty.value || 'medium'; // default level
-  const type = questionType.value || 'multiple'; // default type
+  if (amount < 5) {
+    return alert('Please enter number of question greater than 5');
+  }
+  let category = questionCategory.value
+  if (category.value === undefined) {
+    category = 9;
+  }
+
+
+  let difficulty = questionDifficulty.value;
+  if (difficulty.length === 3) {
+    difficulty = 'easy';
+  }
+
+
+  let type = questionType.value;
+
+  if (type.length === 3) {
+    type = 'multiple';
+  }
+
+  // console.log(type.length, difficulty.length);
+
 
   return `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=${type}`;
 };

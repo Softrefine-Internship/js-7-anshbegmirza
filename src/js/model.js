@@ -4,6 +4,8 @@ import * as helper from "./helper.js";
 import * as config from "./config.js"
 
 
+//MODEL JS 
+
 // to store the quiz state as a state object in model
 export const state = {
   currentQuestionIndex: 0,
