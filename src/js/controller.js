@@ -1,6 +1,7 @@
 
 // Controller.js
 import { async } from 'regenerator-runtime';
+import 'regenerator-runtime/runtime';
 import * as model from './model.js';
 import * as view from './view.js';
 import * as helper from "./helper.js"
